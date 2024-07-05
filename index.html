@@ -4,223 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Quotation Calculator</title>
-    <style>
-        body {
-            margin: 1rem;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .left-section {
-            width: 50%;
-            padding-right: 1rem;
-            box-sizing: border-box;
-        }
-
-        .right-section {
-            width: 50%;
-            padding-left: 1rem;
-            box-sizing: border-box;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        input[type="number"],
-        input[type="range"] {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        input[type="number"]:focus,
-        input[type="range"]:focus {
-            outline: none;
-            border-color: #4CAF50;
-            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-        }
-
-        button[type="submit"] {
-            padding: 0.5rem 1rem;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        .slider-container {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .difficulty-level-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .difficulty-level-option {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .difficulty-level-image {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-
-            .left-section,
-            .right-section {
-                width: 100%;
-                padding: 0;
-            }
-
-            .difficulty-level-container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="left-section">
-        <h1>Product Quotation Calculator</h1>
-        <p>Please enter the product dimensions, difficulty level, weight ratio, and quantity to calculate the quotation.</p>
-        <form id="quotation-form">
-            <div class="form-group">
-                <label for="length">Length (cm):</label>
-                <input type="number" id="length" name="length" min="0" step="0.01" required>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Product Quotation Calculator</h1>
             </div>
-
-            <div class="form-group">
-                <label for="width">Width (cm):</label>
-                <input type="number" id="width" name="width" min="0" step="0.01" required>
-            </div>
-
-            <div class="form-group">
-                <label for="height">Height (cm):</label>
-                <input type="number" id="height" name="height" min="0" step="0.01" required>
-            </div>
-
-            <div class="form-group">
-                <label>Difficulty Level:</label>
-                <div class="difficulty-level-container">
-                    <div class="difficulty-level-option">
-                        <input type="radio" id="difficultyLevel1" name="difficultyLevel" value="1" required>
-                        <label for="difficultyLevel1">1:单色</label>
-                        <img src="statics/images/level1.png" alt="Difficulty Level 1" class="difficulty-level-image">
+            <div class="card-body">
+                <p>Please enter the product dimensions, difficulty level, weight ratio, and quantity to calculate the quotation.</p>
+                <form id="quotation-form">
+                    <div class="form-group">
+                        <label for="length">Length (cm):</label>
+                        <input type="number" id="length" name="length" min="0" step="0.01" required>
                     </div>
-                    <div class="difficulty-level-option">
-                        <input type="radio" id="difficultyLevel2" name="difficultyLevel" value="2">
-                        <label for="difficultyLevel2">2:颜色少、图案简单</label>
-                        <img src="statics/images/level2.jpeg" alt="Difficulty Level 2" class="difficulty-level-image">
-                    </div>
-                    <div class="difficulty-level-option">
-                        <input type="radio" id="difficultyLevel3" name="difficultyLevel" value="3">
-                        <label for="difficultyLevel3">3: 颜色、图案复杂度适中</label>
-                        <img src="statics/images/level3.jpeg" alt="Difficulty Level 3" class="difficulty-level-image">
-                    </div>
-                    <div class="difficulty-level-option">
-                        <input type="radio" id="difficultyLevel4" name="difficultyLevel" value="4">
-                        <label for="difficultyLevel4">4：颜色多，图案复杂</label>
-                        <img src="statics/images/level4jpeg.jpeg" alt="Difficulty Level 4" class="difficulty-level-image">
-                    </div>
-                    <div class="difficulty-level-option">
-                        <input type="radio" id="difficultyLevel5" name="difficultyLevel" value="5">
-                        <label for="difficultyLevel5">5、极难</label>
-                        <img src="https://via.placeholder.com/50" alt="Difficulty Level 5" class="difficulty-level-image">
-                    </div>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <label for="weightRatio">Weight Ratio:</label>
-                <div class="slider-container">
-                    <input type="range" id="weightRatio" name="weightRatio" min="0" max="100" value="50">
-                    <span id="weightRatioValue">50%
-                </div>
-            </div>
+                    <div class="form-group">
+                        <label for="width">Width (cm):</label>
+                        <input type="number" id="width" name="width" min="0" step="0.01" required>
+                    </div>
 
-            <div class="form-group">
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" step="1" required>
-            </div>
+                    <div class="form-group">
+                        <label for="height">Height (cm):</label>
+                        <input type="number" id="height" name="height" min="0" step="0.01" required>
+                    </div>
 
-            <button type="submit">Calculate</button>
-        </form>
+                    <div class="form-group">
+                        <label>Difficulty Level:</label>
+                        <div class="difficulty-level-container">
+                            <div class="difficulty-level-option">
+                                <input type="radio" id="difficultyLevel1" name="difficultyLevel" value="1" required>
+                                <label for="difficultyLevel1">1:单色</label>
+                                <img src="statics/images/level1.png" alt="Difficulty Level 1" class="difficulty-level-image">
+                            </div>
+                            <div class="difficulty-level-option">
+                                <input type="radio" id="difficultyLevel2" name="difficultyLevel" value="2">
+                                <label for="difficultyLevel2">2:颜色少、图案简单</label>
+                                <img src="statics/images/level2.jpeg" alt="Difficulty Level 2" class="difficulty-level-image">
+                            </div>
+                            <div class="difficulty-level-option">
+                                <input type="radio" id="difficultyLevel3" name="difficultyLevel" value="3">
+                                <label for="difficultyLevel3">3: 颜色、图案复杂度适中</label>
+                                <img src="statics/images/level3.jpeg" alt="Difficulty Level 3" class="difficulty-level-image">
+                            </div>
+                            <div class="difficulty-level-option">
+                                <input type="radio" id="difficultyLevel4" name="difficultyLevel" value="4">
+                                <label for="difficultyLevel4">4：颜色多，图案复杂</label>
+                                <img src="statics/images/level4.jpeg" alt="Difficulty Level 4" class="difficulty-level-image">
+                            </div>
+                            <div class="difficulty-level-option">
+                                <input type="radio" id="difficultyLevel5" name="difficultyLevel" value="5">
+                                <label for="difficultyLevel5">5、极难</label>
+                                <img src="https://via.placeholder.com/50" alt="Difficulty Level 5" class="difficulty-level-image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weightRatio">Weight Ratio:</label>
+                        <div class="slider-container">
+                            <input type="range" id="weightRatio" name="weightRatio" min="0" max="100" value="50">
+                            <span id="weightRatioValue">50%</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" step="1" required>
+                    </div>
+
+                    <button type="submit">Calculate</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>Result</h2>
+            </div>
+            <div class="card-body">
+                <div id="result"></div>
+            </div>
+        </div>
     </div>
 
-    <div class="right-section">
-        <h2>Result</h2>
-        <div id="result"></div>
-    </div>
-
-    <script>
-        const form = document.getElementById('quotation-form');
-        const resultDiv = document.getElementById('result');
-        const weightRatioSlider = document.getElementById('weightRatio');
-        const weightRatioValue = document.getElementById('weightRatioValue');
-
-        weightRatioSlider.addEventListener('input', () => {
-            weightRatioValue.textContent = `${weightRatioSlider.value}%`;
-        });
-
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            const formData = new FormData(form);
-            const length = formData.get('length');
-            const width = formData.get('width');
-            const height = formData.get('height');
-            const difficultyLevel = formData.get('difficultyLevel');
-            const weightRatio = formData.get('weightRatio');
-            const quantity = formData.get('quantity');
-
-            if (isNaN(length) || isNaN(width) || isNaN(height) || isNaN(quantity)) {
-                resultDiv.textContent = 'Please enter valid numbers for all fields.';
-                return;
-            }
-
-            const volume = (length * width * height) / 1000000; // Convert to cubic meters
-            const totalVolume = volume * quantity;
-
-            // Perform additional calculations based on difficulty level and weight ratio
-
-            resultDiv.textContent = `Total volume: ${totalVolume.toFixed(3)} cubic meters`;
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
