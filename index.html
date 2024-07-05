@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Quotation Calculator</title>
+    <title>产品报价计算器</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h1>Product Quotation Calculator</h1>
+                <h1>产品报价计算器</h1>
             </div>
             <div class="card-body">
-                <p>Please enter the product dimensions, difficulty level, weight ratio, and quantity to calculate the quotation.</p>
+                <p>请输入产品尺寸、难度等级、重量比例和数量以计算报价。</p>
                 <form id="quotation-form">
                     <div class="form-group">
-                        <label for="length">Length (cm):</label>
+                        <label for="length">长 (cm):</label>
                         <input type="number" id="length" name="length" min="0" step="0.01" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="width">Width (cm):</label>
+                        <label for="width">宽 (cm):</label>
                         <input type="number" id="width" name="width" min="0" step="0.01" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="height">Height (cm):</label>
+                        <label for="height">厚 (cm):</label>
                         <input type="number" id="height" name="height" min="0" step="0.01" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Difficulty Level:</label>
+                        <label>难度等级:</label>
                         <div class="difficulty-level-container">
                             <div class="difficulty-level-option">
                                 <input type="radio" id="difficultyLevel1" name="difficultyLevel" value="1" required>
@@ -45,12 +45,12 @@
                             </div>
                             <div class="difficulty-level-option">
                                 <input type="radio" id="difficultyLevel3" name="difficultyLevel" value="3">
-                                <label for="difficultyLevel3">3: 颜色、图案复杂度适中</label>
+                                <label for="difficultyLevel3">3: 颜色适中、图案适中</label>
                                 <img src="statics/images/level3.jpeg" alt="Difficulty Level 3" class="difficulty-level-image">
                             </div>
                             <div class="difficulty-level-option">
                                 <input type="radio" id="difficultyLevel4" name="difficultyLevel" value="4">
-                                <label for="difficultyLevel4">4：颜色多，图案复杂</label>
+                                <label for="difficultyLevel4">4: 颜色多，图案复杂</label>
                                 <img src="statics/images/level4.jpeg" alt="Difficulty Level 4" class="difficulty-level-image">
                             </div>
                             <div class="difficulty-level-option">
@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="weightRatio">Weight Ratio:</label>
+                        <label for="weightRatio">克重比例:</label>
                         <div class="slider-container">
                             <input type="range" id="weightRatio" name="weightRatio" min="0" max="100" value="50">
                             <span id="weightRatioValue">50%</span>
@@ -70,18 +70,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="quantity">Quantity:</label>
+                        <label for="quantity">数量:</label>
                         <input type="number" id="quantity" name="quantity" min="1" step="1" required>
                     </div>
 
-                    <button type="submit">Calculate</button>
+                    <button type="submit">计算</button>
                 </form>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header">
-                <h2>Result</h2>
+                <h2>报价结果</h2>
             </div>
             <div class="card-body">
                 <div id="result"></div>
