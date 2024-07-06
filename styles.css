@@ -9,7 +9,7 @@ body {
     justify-content: space-between;
     gap: 1rem;
     margin: 1rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -19,7 +19,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px rgba(60, 64, 67, 0.15);
     width: 100%;
-    overflow: hidden; /* 防止内容溢出 */
+    /* overflow: hidden; */
+    /* 防止内容溢出 */
 }
 
 .card-header {
@@ -43,7 +44,11 @@ form {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+}
+
+.form-group label {
+    margin-right: 10px;
 }
 
 label {
@@ -51,11 +56,46 @@ label {
     color: #3c4043;
 }
 
+
+.difficulty-level-image {
+    width: 80px; /* 调整为您想要的宽度 */
+    height: 80px; /* 调整为您想要的高度 */
+    cursor: pointer; /* 鼠标悬停时显示为指针 */
+    transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.difficulty-level-image:hover {
+    transform: scale(1.5); /* 悬停时放大1.2倍 */
+}
+
+.difficulty-level-container {
+    display: flex;
+    justify-content: space-between; /* 分散对齐选项 */
+    align-items: center; /* 确保选项垂直居中对齐 */
+}
+
+
+.label-input-container {
+    display: flex;
+    flex-direction: row; /* 将输入框放在右边 */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label-input-container label {
+    width: 70px; /* 设置固定宽度 */
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 可选：文本溢出时显示省略号 */
+}
+
 input[type="number"],
 input[type="range"] {
-    width: 100%; /* 确保输入框宽度不超过卡片 */
+    width: 40%;
+    /* 确保输入框宽度不超过卡片 */
     padding: 0.75rem;
-    border: 1px solid #dadce0;
+    border: 2px solid #dadce0;
     border-radius: 4px;
     font-size: 1rem;
 }
@@ -101,12 +141,7 @@ button[type="submit"]:hover {
     gap: 0.5rem;
 }
 
-.difficulty-level-image {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-}
+
 
 @media (max-width: 768px) {
     .container {

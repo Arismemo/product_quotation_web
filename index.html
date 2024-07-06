@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>产品报价计算器</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <div class="card">
@@ -16,47 +18,70 @@
                 <p>请输入产品尺寸、难度等级、重量比例和数量以计算报价。</p>
                 <form id="quotation-form">
                     <div class="form-group">
-                        <label for="length">长 (cm):</label>
-                        <input type="number" id="length" name="length" min="0" step="0.01" required>
+                        <div class="label-input-container">
+                            <label for="length">长 (cm):</label>
+                            <input type="number" id="length" name="length" min="0" value="3" step="0.01" required>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="width">宽 (cm):</label>
-                        <input type="number" id="width" name="width" min="0" step="0.01" required>
+                        <div class="label-input-container">
+                            <label for="width">宽 (cm):</label>
+                            <input type="number" id="width" name="width" min="0" value="3" step="0.01" required>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="height">厚 (cm):</label>
-                        <input type="number" id="height" name="height" min="0" step="0.01" required>
+                        <div class="label-input-container">
+                            <label for="height">厚 (cm):</label>
+                            <input type="number" id="height" name="height" min="0" value="0.3" step="0.01" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-input-container">
+                            <label for="quantity">数量 (个):</label>
+                            <input type="number" id="quantity" name="quantity" min="1" value="3000" step="1" required>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label>难度等级:</label>
                         <div class="difficulty-level-container">
                             <div class="difficulty-level-option">
-                                <input type="radio" id="difficultyLevel1" name="difficultyLevel" value="1" required>
-                                <label for="difficultyLevel1">1:单色</label>
                                 <img src="statics/images/level1.png" alt="Difficulty Level 1" class="difficulty-level-image">
+                                <div>
+                                    <input type="radio" id="difficultyLevel1" name="difficultyLevel" value="1" required>
+                                    <label for="difficultyLevel1">单色</label>
+                                </div>
                             </div>
                             <div class="difficulty-level-option">
-                                <input type="radio" id="difficultyLevel2" name="difficultyLevel" value="2">
-                                <label for="difficultyLevel2">2:颜色少、图案简单</label>
-                                <img src="statics/images/level2.jpeg" alt="Difficulty Level 2" class="difficulty-level-image">
+                                <img src="statics/images/level2.png" alt="Difficulty Level 2" class="difficulty-level-image">
+                                <div>
+                                    <input type="radio" id="difficultyLevel2" name="difficultyLevel" value="2">
+                                    <label for="difficultyLevel2">混批</label>
+                                </div>
                             </div>
                             <div class="difficulty-level-option">
-                                <input type="radio" id="difficultyLevel3" name="difficultyLevel" value="3">
-                                <label for="difficultyLevel3">3: 颜色适中、图案适中</label>
-                                <img src="statics/images/level3.jpeg" alt="Difficulty Level 3" class="difficulty-level-image">
+                                <img src="statics/images/level3.png" alt="Difficulty Level 3" class="difficulty-level-image">
+                                <div>
+                                    <input type="radio" id="difficultyLevel3" name="difficultyLevel" value="3">
+                                    <label for="difficultyLevel3">系列</label>
+                                </div>
                             </div>
                             <div class="difficulty-level-option">
-                                <input type="radio" id="difficultyLevel4" name="difficultyLevel" value="4">
-                                <label for="difficultyLevel4">4: 颜色多，图案复杂</label>
-                                <img src="statics/images/level4.jpeg" alt="Difficulty Level 4" class="difficulty-level-image">
+                                <img src="statics/images/level4.png" alt="Difficulty Level 4" class="difficulty-level-image">
+                                <div>
+                                    <input type="radio" id="difficultyLevel4" name="difficultyLevel" value="4">
+                                    <label for="difficultyLevel4">复杂系列</label>
+                                </div>
                             </div>
                             <div class="difficulty-level-option">
-                                <input type="radio" id="difficultyLevel5" name="difficultyLevel" value="5">
-                                <label for="difficultyLevel5">5、极难</label>
-                                <img src="https://via.placeholder.com/50" alt="Difficulty Level 5" class="difficulty-level-image">
+                                <img src="statics/images/level5.png" alt="Difficulty Level 5" class="difficulty-level-image">
+                                <div>
+                                    <input type="radio" id="difficultyLevel5" name="difficultyLevel" value="5">
+                                    <label for="difficultyLevel5">极难</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -64,15 +89,12 @@
                     <div class="form-group">
                         <label for="weightRatio">克重比例:</label>
                         <div class="slider-container">
-                            <input type="range" id="weightRatio" name="weightRatio" min="0" max="100" value="50">
-                            <span id="weightRatioValue">50%</span>
+                            <input type="range" id="weightRatio" name="weightRatio" min="0" max="100" value="90">
+                            <span id="weightRatioValue">90%</span>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="quantity">数量:</label>
-                        <input type="number" id="quantity" name="quantity" min="1" step="1" required>
-                    </div>
+
 
                     <button type="submit">计算</button>
                 </form>
@@ -91,4 +113,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
